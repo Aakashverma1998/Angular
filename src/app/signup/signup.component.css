@@ -1,0 +1,57 @@
+h1{
+    background-color: darkorange;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Poppins", sans-serif;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background:linear-gradient(135deb, #71b7e6, #716575);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right:20px;
+
+
+}
+
+.container{
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    margin: 20px 0 12px 0;
+    margin-right:20px;
+    margin-left: 200;
+
+}
+
+.container.form-group{
+    display: flex;
+    flex-wrap: wrap;
+}
+input{
+    width: 100%;
+    height: 40px;
+    display: block;
+    outline: none;
+    transition: all 0.3 ease;
+    
+}
+@media(max-width:584px){
+    .container{
+        max-width: 100%;
+    }
+
+}
+
+

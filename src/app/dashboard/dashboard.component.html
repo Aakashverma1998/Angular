@@ -1,0 +1,3 @@
+<ul class="navbar-nav">
+    <li style="float:right"><a class="nav-link" *ngIf="_authService.IsLoggedIn()"(click)="_authService.logoutUser()" href="/login">Logout</a></li>
+</ul>

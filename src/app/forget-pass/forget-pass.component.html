@@ -1,0 +1,28 @@
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="text-center">
+                        <h1>ForgetPassword</h1><hr>
+                    </div>
+                    <br>
+                    <form [formGroup]='forgetPassword'(ngSubmit)="forgetpass()">
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input formControlName="email" type="email"  class="form-control" placeholder="Enter correct email">
+                            <div *ngIf="forgetPassword.controls['email'].hasError('required')==true && forgetPassword.controls['email']?.touched" class="email" >*Email is required</div>
+                            <div *ngIf="forgetPassword.controls['email'].hasError('email')==true && forgetPassword.controls['email']?.touched" class="email">*Please enter correct email</div>
+    
+    
+                        </div>
+                        <br>
+                        <button  style='margin-right:16px' type="submit"[disabled]="forgetPassword.invalid" mat-raised-button color="primary" class="btn btn-primary">Submit</button>
+                    </form>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>

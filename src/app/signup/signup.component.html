@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>SignUp</h1>
+                </div>
+                <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+                    <div class="form-group">
+                        <label>Enter name</label>
+                        <input formControlName="name" type="text" class="form-control" placeholder="Enter name"
+                            required>
+                        <div
+                            *ngIf="signupForm.controls['name'].hasError('required')==true && signupForm.controls['name']?.touched">
+                            *Name is required</div>
+                        <div
+                            *ngIf="signupForm.controls['name'].hasError('minlength')==true && signupForm.controls['name']?.touched">
+                            *Name should be 3 character</div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Enter email</label>
+                        <input formControlName="email" type="email" class="form-control" placeholder="Enter email">
+                        <div
+                            *ngIf="signupForm.controls['email'].hasError('required')==true && signupForm.controls['email']?.touched">
+                            *Email is required</div>
+                        <div
+                            *ngIf="signupForm.controls['email'].hasError('email')==true && signupForm.controls['email']?.touched">
+                            *Please enter the valid email</div>
+
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Enter Password</label>
+                        <input formControlName="password" type="password" class="form-control" placeholder="Password">
+                        <div
+                            *ngIf="signupForm.controls['password'].hasError('required')==true && signupForm.controls['password']?.touched">
+                            *Password is required</div>
+                        <div
+                            *ngIf="signupForm.controls['password'].hasError('minlength')==true && signupForm.controls['password']?.touched">
+                            *Password should be 8 character</div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Enter mobilenumber</label>
+                        <input formControlName="mobilenumber" type="text" class="form-control"
+                            placeholder="Enter mobilenumber">
+                        <div
+                            *ngIf="signupForm.controls['mobilenumber'].hasError('required')==true && signupForm.controls['mobilenumber']?.touched">
+                            *Mobilenumber is required</div>
+                        <div
+                            *ngIf="signupForm.controls['mobilenumber'].hasError('minlength')==true && signupForm.controls['mobilenumber']?.touched">
+                            *Enter corrcet mobilenumber</div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Enter address</label>
+                        <input formControlName="address" type="text" class="form-control" placeholder="Enter address">
+                        <div
+                            *ngIf="signupForm.controls['address'].hasError('required')==true && signupForm.controls['address']?.touched">
+                            *Address is required</div>
+                    </div>
+                    <br>
+                    <button [disabled]="signupForm.invalid" mat-raised-button color="primary" type="submit"
+                        class="btn btn-primary">Signup</button><br>
+                    <a routerLink='/login'>Already User? Click to Login </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
